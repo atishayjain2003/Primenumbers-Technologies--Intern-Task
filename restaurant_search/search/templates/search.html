@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Search</title>
+</head>
+<body>
+    <h1>Search Restaurants</h1>
+    <form method="get">
+        <input type="text" name="q" value="{{ query }}" placeholder="Search for a dish...">
+        <button type="submit">Search</button>
+    </form>
+
+    <ul>
+        {% for restaurant in results %}
+            <li>{{ restaurant.name }} - {{ restaurant.dish }}</li>
+        {% empty %}
+            <li>No results found</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
